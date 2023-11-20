@@ -3,42 +3,148 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="src/images/favicon-32x32.png">
+  <link rel="stylesheet" href="src/scss/styles.css">
   
   <title>Frontend Mentor | E-commerce product page</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+  <div id="side-mobile-nav">
+    <div id="mobile-nav-content">
+      <ul>
+        <li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="src/images/icon-close.svg" alt=""></a></li>
+        <li><a href="#">Collections</a></li>
+        <li><a href="#">Men</a></li>
+        <li><a href="#">Women</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
 
-  Collections
-  Men
-  Women
-  About
-  Contact
-
-  Sneaker Company
-
-  Fall Limited Edition Sneakers
-
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
-
-  $125.00
-  50%
-  $250.00
-
-  0
-  Add to cart
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
   </div>
+  <div class="header">
+    <div class="navigation">
+      <img src="src/images/icon-menu.svg" alt="hamburger menu" id="mobile-menu">
+      <img src="src/images/logo.svg" alt="sneakers logo">
+      <div id="desktop-nav">
+        <ul>
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Women</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="cart-with-user-menu">
+      <div class="cart-icon">
+        <img src="src/images/icon-cart.svg" alt="cart logo" id="cart-icon">
+        <div id="cart-quantity">0</div>
+      </div>
+      <img src="src/images/image-avatar.png" alt="avatar icon" id="profil-image">
+    </div>
+  </div>
+  <main>
+    <div class="product">
+      <div class="product-pictures">
+        <div class="product-main-picture" id="product-main-picture">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" class="previous-arrow" id="previous-arrow">
+            <circle cx="20" cy="20" r="20" fill="white"/>
+            <path d="M22.8572 14.2857L17.1429 20L22.8572 25.7143" stroke="#1D2026" stroke-width="3"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none" class="next-arrow" id="next-arrow">
+            <circle cx="20" cy="20" r="20" fill="white"/>
+            <path d="M17.1428 14.2857L22.8571 20L17.1428 25.7143" stroke="#1D2026" stroke-width="3"/>
+          </svg>
+        </div >
+        <div class="thumbnails">
+          <img class="thumb active-img" src="src/images/image-product-1-thumbnail.jpg" alt="" id="thumb-1" data-value="0">
+          <img class="thumb" src="src/images/image-product-2-thumbnail.jpg" alt="" id="thumb-2" data-value="1">
+          <img class="thumb" src="src/images/image-product-3-thumbnail.jpg" alt="" id="thumb-3" data-value="2">
+          <img class="thumb" src="src/images/image-product-4-thumbnail.jpg" alt="" id="thumb-4" data-value="3">
+        </div>
+      </div>
+      <div class="product-content">
+        <div class="product-brand">sneaker company</div>
+        <div class="product-name">Fall Limited Edition Sneakers</div>
+        <div class="product-description">These low-profile sneakers are your perfect casual wear companion. Featuring a
+          durable rubber outer sole, they’ll withstand everything the weather can offer.
+        </div>
+        <div class="product-pricing">
+          <div class="product-price">
+            <h2>125.00</h2>
+            <span>50</span>
+          </div>
+          <div class="product-original-price">250.00</div>
+        </div>
+
+        <div class="cart-actions">
+          <div class="quantity">
+            <p>0</p>
+            <img src="src/images/icon-minus.svg" id="decrease" data-value="dec">
+            <img src="src/images/icon-plus.svg" alt="" id="increase" data-value="inc">
+          </div>
+          <div class="add-to-cart-btn">
+            <img src="src/images/Shape.svg">
+            Add to cart</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="lightbox-container hide">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="closebtn">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M20 2.85714L17.1429 0L10 7.14286L2.85714 0L0 2.85714L7.14286 10L0 17.1429L2.85714 20L10 12.8571L17.1429 20L20 17.1429L12.8571 10L20 2.85714Z" fill="white"/>
+    </svg>
+    <div class="lightbox-main-picture">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" class="previous-arrow">
+        <circle cx="20" cy="20" r="20" fill="white"/>
+        <path d="M22.8572 14.2857L17.1429 20L22.8572 25.7143" stroke="#1D2026" stroke-width="3"/>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none" class="next-arrow">
+        <circle cx="20" cy="20" r="20" fill="white"/>
+        <path d="M17.1428 14.2857L22.8571 20L17.1428 25.7143" stroke="#1D2026" stroke-width="3"/>
+      </svg>
+    </div>
+    <div class="lightbox-thumbnails">
+        <div class="lightbox-thumbnail">
+          <img class="thumb active-img" src="src/images/image-product-1-thumbnail.jpg" alt="" data-value="0">
+        </div>
+      <div class="lightbox-thumbnail">
+        <img class="thumb" src="src/images/image-product-2-thumbnail.jpg" alt="" data-value="1">
+      </div>
+      <div class="lightbox-thumbnail">
+        <img class="thumb" src="src/images/image-product-3-thumbnail.jpg" alt="" data-value="2">
+      </div>
+      <div class="lightbox-thumbnail">
+        <img class="thumb" src="src/images/image-product-4-thumbnail.jpg" alt="" data-value="3">
+      </div>
+    </div>
+  </div>
+  <div class="cart-modal" id="cart">
+    <div class="cart-title">Cart</div>
+    <div class="cart-content">
+      <div class="cart-item">
+        <div class="cart-item-thumb"></div>
+        <div class="cart-item-content">
+          <div class="cart-item-content-titel">testeasdfioasfqefsad</div>
+          <div class="cart-item-content-pricing">
+            <span></span><span></span>
+          </div>
+        </div>
+        <div class="cart-item-delete"></div>
+      </div>
+      <div class="empty-cart">Your cart is empty.</div>
+      <div class="checkout-button hide">Checkout</div>
+
+
+    </div>
+  </div>
+
+
+<script src="src/js/main.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,92 @@
+@import "variables";
+@import "mixins";
+
+.header  {
+  @include flex(flex-start, space-between);
+  background-color: white;
+  padding: 19px 24px 2rem 19px;
+}
+
+.navigation {
+  @include flex();
+  gap: 1rem;
+}
+
+#profil-image {
+  width: 24px;
+  height: 24px;
+  margin-left: 2rem;
+}
+
+#profil-image:hover {
+  outline: 3px solid $primary;
+  border-radius: 100px;
+}
+
+#desktop-nav {
+  display: none;
+}
+
+#desktop-nav ul{
+  list-style-type: none;
+  padding: 0;
+  width: fit-content;
+  margin: 0;
+}
+
+#desktop-nav ul > li{
+  display: inline-block;
+  transition: all .5s ease-in-out;
+  position: relative;
+  margin-right: 3rem;
+}
+
+#desktop-nav ul > li > a{
+  text-decoration: none;
+  color: $secondary-text;
+  font-size: 15px;
+  line-height: 26px;
+  padding-right: 33px;
+}
+
+#desktop-nav > ul > li::before {
+  content: "";
+  position: absolute;
+  top: 3.5rem;
+  left: 0;
+  width: 0;
+  height: 4px;
+  border-radius: 1rem;
+  background-color: $primary;
+  box-shadow: 0 0 25px $primary,
+              0 0 50px $primary;
+  transition: 0.4s ease;
+}
+
+#desktop-nav > ul > li:hover::before {
+  width: 100%;
+}
+
+.cart-with-user-menu {
+  @include flex();
+}
+
+.cart-icon {
+  position: relative;
+}
+
+#cart-quantity {
+  @include flex();
+  width: 19px;
+  height: 13px;
+  background-color: $primary;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  border-radius: 50px;
+  color: $accent-text;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+

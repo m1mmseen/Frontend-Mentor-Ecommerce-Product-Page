@@ -1,0 +1,25 @@
+@font-face {
+  font-family: kumbh;
+  src: url("../fonts/KumbhSans-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: kumbh;
+  src: url("../fonts/KumbhSans-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+$primary: hsl(26 100% 55%);
+$secondary: hsl(25 100% 94%);
+
+$primary-text: hsl(220 13% 13%);
+$secondary-text: hsl(220 9% 45%);
+$tertiary-text: hsl(220 14% 75%);
+$accent-text: hsl(0 0% 98%);
+
+$element-bg: hsl(223 64% 98%);
+$lightbox-bg: hsla(0, 0%, 0%, 75%);
+

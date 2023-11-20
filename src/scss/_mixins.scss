@@ -1,0 +1,21 @@
+@import "variables";
+
+@mixin flex($align: center, $justify: center) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin arrow-and-quantifier ($top: 50%) {
+  position: absolute;
+  top: $top;
+}
+
+@mixin button() {
+  padding: .1rem;
+  text-align: center;
+  color: $accent-text;
+  background-color: $primary;
+  height: 56px;
+  border-radius: 15px;
+}

@@ -1,0 +1,138 @@
+@import "variables";
+@import "mixins";
+
+
+
+.product-content {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  @include flex(stretch, center);
+  flex-direction: column;
+  gap: 1rem;
+  padding-inline: 19px;
+  margin-inline:auto ;
+}
+
+.product-brand {
+  color: $primary;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.84px;
+}
+
+.product-name {
+  color: $primary-text;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.product-description {
+  color: $secondary-text;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+.product-pricing {
+  @include flex(center, space-between);
+}
+
+.product-price {
+  @include flex();
+  gap: .5rem
+}
+
+.product-price h2{
+  color: $primary-text;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.product-price h2::before {
+  content: "$";
+}
+
+.product-price span {
+  color: $primary;
+  font-size: 16px;
+  background-color: $secondary;
+  padding: .2rem .5rem;
+  border-radius: 10px;
+}
+
+.product-price span::after {
+  content: "%";
+}
+
+.product-original-price {
+  color: $tertiary-text;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 28px;
+  text-decoration: line-through;
+}
+
+.product-original-price::before {
+  content: "$";
+}
+
+.cart-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.quantity {
+  position: relative;
+  text-align: center;
+  background-color: $element-bg;
+  padding: .1rem;
+  border-radius: 15px;
+  height: 56px;
+}
+
+.add-to-cart-btn {
+  @include button;
+  @include flex();
+  gap: .5rem;
+  box-shadow: 0 20px 50px -20px $primary;
+}
+
+.add-to-cart-btn:hover {
+  opacity: .5;
+}
+
+.add-to-cart-btn > img {
+  width: 17px;
+  height: 16px;
+  color: $accent-text;
+}
+
+.previous-arrow, #decrease {
+  @include arrow-and-quantifier;
+  left: 2%;
+}
+
+.next-arrow {
+  @include arrow-and-quantifier;
+  right: 2%;
+
+}
+#increase {
+  @include arrow-and-quantifier(40%);
+  right: 2%;
+}
+
+#decrease:hover, #increase:hover {
+  opacity: .3;
+}
+
+
+
+
+
+
+
+
+
