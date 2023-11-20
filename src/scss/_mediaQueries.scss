@@ -48,7 +48,7 @@
 
 @media screen and (min-width: 1200px) {
   body {
-    padding-inline: 165px 1rem;
+    padding-left: 3rem;
   }
   #mobile-menu {
     display: none;
@@ -67,10 +67,15 @@
     padding: 3rem;
     width: 50%;
   }
+  .product-pictures {
+    @include flex();
+    flex-direction: column;
+  }
 
   .product-content {
     margin-top: 0;
     max-width: 445px;
+    margin-inline: 0;
   }
 
   .product-pricing {

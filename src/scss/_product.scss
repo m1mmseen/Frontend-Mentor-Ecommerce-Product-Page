@@ -1,8 +1,6 @@
 @import "variables";
 @import "mixins";
 
-
-
 .product-content {
   margin-top: 1rem;
   margin-bottom: 3rem;
@@ -10,7 +8,7 @@
   flex-direction: column;
   gap: 1rem;
   padding-inline: 19px;
-  margin-inline:auto ;
+  margin-inline: auto;
 }
 
 .product-brand {

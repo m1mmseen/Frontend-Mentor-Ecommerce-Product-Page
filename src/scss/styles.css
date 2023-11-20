@@ -423,6 +423,30 @@
   justify-content: center;
 }
 
+@font-face {
+  font-family: kumbh;
+  src: url("../fonts/KumbhSans-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: kumbh;
+  src: url("../fonts/KumbhSans-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: kumbh;
+  src: url("../fonts/KumbhSans-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: kumbh;
+  src: url("../fonts/KumbhSans-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
 .product-main-picture {
   position: relative;
   background-image: url("../images/image-product-1.jpg");
@@ -605,7 +629,7 @@
 }
 @media screen and (min-width: 1200px) {
   body {
-    padding-inline: 165px 1rem;
+    padding-left: 3rem;
   }
   #mobile-menu {
     display: none;
@@ -626,9 +650,16 @@
     padding: 3rem;
     width: 50%;
   }
+  .product-pictures {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
   .product-content {
     margin-top: 0;
     max-width: 445px;
+    margin-inline: 0;
   }
   .product-pricing {
     flex-direction: column;
@@ -660,9 +691,10 @@
 }
 body {
   font-family: kumbh, sans-serif;
-  margin: 0;
+  margin: 0 auto;
   position: relative;
   height: 100svh;
+  max-width: 1298px;
 }
 
 #side-mobile-nav {
