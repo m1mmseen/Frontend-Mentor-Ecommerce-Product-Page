@@ -2,14 +2,16 @@
 @import "mixins";
 
 .header  {
-  @include flex(flex-start, space-between);
+  @include flex(stretch, center);
   background-color: white;
   padding: 19px 24px 2rem 19px;
+  height: 5svh;
 }
 
 .navigation {
   @include flex();
   gap: 1rem;
+  height: 100%;
 }
 
 #profil-image {
@@ -73,6 +75,9 @@
 
 .cart-icon {
   position: relative;
+  width: 5svw;
+  height: 5svh;
+  @include flex();
 }
 
 #cart-quantity {
@@ -81,8 +86,8 @@
   height: 13px;
   background-color: $primary;
   position: absolute;
-  top: -8px;
-  right: -8px;
+  top: 5px;
+  right: 15px;
   border-radius: 50px;
   color: $accent-text;
   font-size: 10px;

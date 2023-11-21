@@ -16,17 +16,30 @@ function closeNav() {
 }
 
 /*     OPEN CART LOCIG    */
-const cart = document.getElementById("cart-icon");
-cart.addEventListener("click", showHideCart);
+const cartIcon = document.getElementById("cart-icon");
+const cart =  document.getElementById("cart");
+let cartOpen = false;
+cartIcon.addEventListener("click", showHideCart);
+
+// this needs to be set, otherwise the cart doesn't show up on first click (issue?)
+cart.style.display = "none";
 
 function showHideCart() {
-    const cart =  document.getElementById("cart");
+    cartOpen = !cartOpen;
     if (cart.style.display === "none") {
         cart.style.display = "grid";
     } else {
         cart.style.display = "none"
     }
 }
+
+document.querySelectorAll("main, .navigation").forEach(element => element.addEventListener("click", e => {
+        if( cartOpen) {
+            showHideCart();
+        }
+    })
+)
+
 
 /*    THUMBNAILS LOGIC    */
 const mainPicture = document.getElementById("product-main-picture");
@@ -99,9 +112,16 @@ const increase = document.getElementById("increase");
 const quantityValue = document.querySelector(".quantity > p");
 const cartQuantity = document.getElementById("cart-quantity");
 
-if (parseInt(cartQuantity.innerHTML) === 0) {
-    cartQuantity.style.display = "none";
+
+function hideShowCartQunatity() {
+    if (parseInt(cartQuantity.innerHTML) === 0) {
+        cartQuantity.style.display = "none";
+    } else {
+        cartQuantity.style.display = "flex";
+    }
 }
+hideShowCartQunatity();
+
 
 decrease.addEventListener("click", changeQuantity);
 increase.addEventListener("click", changeQuantity);
@@ -159,7 +179,7 @@ function addToCart() {
         document.querySelector(".cart-item-content-pricing span:first-of-type").innerHTML = "$" + product.actualPrice + ".00 x " + quantityValue.innerHTML;
         document.querySelector(".cart-item-content-pricing span:last-of-type").innerHTML = "$" +  (product.actualPrice * quantity).toString() + ".00";
         cartQuantity.innerHTML = quantityValue.innerHTML;
-        cartQuantity.style.display = "flex";
+        hideShowCartQunatity();
         quantityValue.innerHTML = "0";
     }
 }
@@ -171,6 +191,8 @@ function deleteItem() {
     document.querySelector(".checkout-button").classList.add("hide");
     document.querySelector(".empty-cart").classList.remove("hide");
     cartItem.classList.remove("visible");
+    cartQuantity.innerHTML = "0";
+    hideShowCartQunatity();
 }
 
 

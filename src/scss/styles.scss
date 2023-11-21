@@ -1,3 +1,12 @@
+/* ----- TABLE OF CONTENT -----
+
+  1. imports
+  2. body
+  3. Mobile Navigation
+  4. Custom Scrollbar
+
+*/
+
 @import "variables";
 @import "mixins";
 @import "header";
@@ -7,7 +16,6 @@
 @import "lightbox";
 @import "mediaQueries";
 
-
 body {
   font-family: kumbh, sans-serif;
   margin: 0 auto;
@@ -15,6 +23,8 @@ body {
   height: 100svh;
   max-width: 1298px;
 }
+
+/* ----- MOBILE NAVIGATION ----- */
 
 #side-mobile-nav {
   height: 100%;
@@ -50,9 +60,25 @@ body {
   text-decoration: none;
 }
 
+/* ----- CUSTOM SCROLLBAR ----- */
 
 
+::-webkit-scrollbar {
+  width: 1rem;
+  background-color: $secondary;
+}
 
+::-webkit-scrollbar-track {
+  outline: 1px solid $secondary;
 
+}
 
+::-webkit-scrollbar-thumb {
+  background: hsla(26, 100%, 55%, 30%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $primary;
+}
 
